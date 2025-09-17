@@ -31,7 +31,8 @@ function createTabs(tabsData) {
         const tabContent = tabsList.find((elem) => elem.id === Number(event.target.dataset.id)).content
         contentHolder.textContent = tabContent
         event.target.classList.add('active');
-        activeTab.classList.remove('active');
+        if (activeTab !== event.target)
+            activeTab.classList.remove('active');
         activeTab = event.target
     }
 
